@@ -1,0 +1,166 @@
+body { padding-top:70px; background-color: #34495e;}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.thumb {
+  float: left;
+  margin: -0.5em 1em 1.5em 0;
+  padding-bottom: 1em;
+  height: 100px;
+  width: 70px;
+}
+
+.thumbnails {
+}
+
+.games {
+  list-style: none;
+}
+
+.games li {
+  clear: both;
+  height: 80px;
+  padding-top: 15px;
+  margin-left: 25px;
+}
+
+.searchGames li {
+  list-style: none;
+  clear: both;
+  height: 70px;
+  padding-top: 15px;
+  font-size: 80%;
+}
+
+.filterMenu {
+  position: fixed;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.gameListButton li {
+  height: 25px;
+  padding-top: 0px;
+  margin-left: 0px;
+}
+
+.btn-purple {
+  background-color: hsl(242, 100%, 70%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cdccfe", endColorstr="#6b65ff");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#cdccfe), to(#6b65ff));
+  background-image: -moz-linear-gradient(top, #cdccfe, #6b65ff);
+  background-image: -ms-linear-gradient(top, #cdccfe, #6b65ff);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cdccfe), color-stop(100%, #6b65ff));
+  background-image: -webkit-linear-gradient(top, #cdccfe, #6b65ff);
+  background-image: -o-linear-gradient(top, #cdccfe, #6b65ff);
+  background-image: linear-gradient(#cdccfe, #6b65ff);
+  border-color: #6b65ff #6b65ff hsl(242, 100%, 65%);
+  color: #333 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.33);
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-ltpurple {
+  background-color: hsl(240, 64%, 74%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e5e5f9", endColorstr="#9292e7");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#e5e5f9), to(#9292e7));
+  background-image: -moz-linear-gradient(top, #e5e5f9, #9292e7);
+  background-image: -ms-linear-gradient(top, #e5e5f9, #9292e7);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5f9), color-stop(100%, #9292e7));
+  background-image: -webkit-linear-gradient(top, #e5e5f9, #9292e7);
+  background-image: -o-linear-gradient(top, #e5e5f9, #9292e7);
+  background-image: linear-gradient(#e5e5f9, #9292e7);
+  border-color: #9292e7 #9292e7 hsl(240, 64%, 69%);
+  color: #333 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.33);
+  -webkit-font-smoothing: antialiased;
+}
+
+.navbar-default {
+  background-color: #aaaaef;
+  border-color: #6054cb;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #dad8dc;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #dad8dc;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #dad8dc;
+  background-color: #6054cb;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #dad8dc;
+  background-color: #6054cb;
+}
+.navbar-default .navbar-toggle {
+  border-color: #6054cb;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #6054cb;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #dad8dc;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #dad8dc;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #dad8dc;
+    background-color: #6054cb;
+  }
+}

@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="filterMenu">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            Filter: <input ng-model="query"></br></br>
+          	Sort by:
+            <select ng-model="sortExpression">
+              <option value="title">Alphabetical</option>
+              <option value="-title">Reverse Alph</option>
+              <option value="user_price">Price</option>
+              <option value="age">Oldest</option>
+            </select></br>
+            <input type="checkbox" ng-model="reverse"> Reverse Order
+            </br></br>
+            Total Games: {{games.length}} </br>
+            Total Price: {{totalWatchPrice | currency:"$"}}</br>
+            User: {{user.local.email}}</br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <!--Body content-->
+	    <ul class="games">
+	      <li ng-repeat="game in games | filter:query | orderBy:mySortFunction:reverse" class="thumbnail">
+          <div class="col-md-9">
+	          <div>{{game._game['title']}}</div>
+            <div class="col-md-6">
+              <div>{{game._game['console']}}</div>
+              <div>{{ (game.user_price) | currency:"$"}}</div>
+            </div>
+            <div class="col-md-6">
+              <!-- <input type="checkbox" ng-model="game['isCIB']" ng-change="changePrice(game)"> CIB 
+              <button type="button" class="btn btn-default btn-sm" ng-model="game['isCIB']" ng-change="changePrice(game)" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+                CIB
+              </button>-->
+            </div>
+	    		</div>
+	    		<div class="col-md-3" style="text-align: right;">
+        <!--<button class="btn btn-default btn-sm" ng-click="remove(game)">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"> Delete
+            </button>  -->
+            <div class="btn-group gameListButton" dropdown>
+              <button type="button" class="btn btn-default btn-sm" ng-model="game['isCIB']" ng-change="changePrice(game)" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+                CIB
+              </button>
+              <button type="button" class="btn btn-default btn-sm dropdown-toggle" dropdown-toggle>
+                <span class="caret"></span>
+                <span class="sr-only">Split button!</span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a ng-click="remove(game)">Remove</a>
+                </li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+	    		</div>
+	      </li>
+	  	</ul>
+    </div>
+    <div class="col-md-4">
+      <div class="input-group">
+        <form ng-submit="searchForCards(searchCard)">
+          <input ng-model="searchCard" type="text" class="form-control" aria-label="..." placeholder="Search for games">
+          <select ng-model="consoleFilter">
+            <option value="">All</option>
+            <option value="Nintendo DS">DS</option>
+            <option value="gameCube">Gamecube</option>
+            <option value="Nintendo 64">N64</option>
+            <option value="nes">NES</option>
+            <option value="Playstation">PS1</option>
+            <option value="Playstation 2">PS2</option>
+            <option value="Super Nintendo">SNES</option>
+            <option value="Wii">Wii</option>
+          </select></br></br>
+          <button class="btn btn-default btn-sm" ng-click="searchForCards(searchCard)">Search</button>
+        </form>
+      </div>
+      </br></br>
+      <ul class="searchGames">
+        <li ng-repeat="sGame in searchGames | filter:consoleFilter | orderBy:'title'" class="thumbnail">
+          <div class="col-md-8">
+            <div>{{sGame['title']}}</div>
+            <div>{{sGame['console']}}</div>
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-default btn-sm" ng-click="add(sGame)">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</br>

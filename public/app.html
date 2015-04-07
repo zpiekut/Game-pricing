@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<title>Retro Game Prices</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+
+	<!-- JS -->
+	<script src="/libs/angular/angular.min.js"></script>
+	<script src="/libs/angular-aria/angular-aria.js"></script>
+	<script src="/libs/angular/angular-animate.js"></script>
+	<script src="/libs/angular-route/angular-route.min.js"></script>
+	<script src="/libs/bootstrap-gh-pages/ui-bootstrap-0.9.0.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js"></script>
+
+	<!-- ANGULAR CUSTOM -->
+	<script src="js/controllers/MainCtrl.js"></script>
+	<script src="js/controllers/NerdCtrl.js"></script>
+	<script src="js/services/NerdService.js"></script>
+	<script src="js/controllers/GeekCtrl.js"></script>
+	<script src="js/services/GeekService.js"></script>
+	<script src="js/appRoutes.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body ng-app="sampleApp" ng-controller="NerdController">
+<div class="container">
+	
+	<!-- HEADER -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/">Game Prices</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li><a href="/nerds">Page 1</a></li>
+			<li><a href="/geeks">Page 2</a></li>
+			<li><a href="/logout">Logout</a></li>
+		</ul>
+	</nav>
+
+	<!-- ANGULAR DYNAMIC CONTENT -->
+	<div ng-view></div>
+
+</div>
+</body>
+</html>
